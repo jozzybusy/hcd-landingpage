@@ -1,0 +1,249 @@
+.wrap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* ═══════════════════════════════════════════
+   MarkSimos Logo Reveal — 5 s loop @ 30 fps
+   ═══════════════════════════════════════════ */
+
+/* ─── Soft glow behind the logo ─── */
+.glow {
+  animation: glow-cycle 5s ease-in-out infinite;
+  transform-origin: 100px 80px;
+  will-change: opacity, transform;
+}
+
+@keyframes glow-cycle {
+  0%, 10% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  20% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  80% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
+
+/* ─── Red disc + ring group ───
+   0.0–0.5 s : flip in
+   0.5–4.0 s : hold + subtle breathe
+   4.0–5.0 s : flip out */
+.discGroup {
+  animation: disc-cycle 5s ease-in-out infinite;
+  transform-origin: 100px 80px;
+  will-change: transform, opacity;
+}
+
+@keyframes disc-cycle {
+  /* flip in */
+  0% {
+    transform: scaleX(0) scaleY(0.85);
+    opacity: 0;
+  }
+  10% {
+    transform: scaleX(1.12) scaleY(1.04);
+    opacity: 1;
+  }
+  16% {
+    transform: scaleX(1) scaleY(1);
+    opacity: 1;
+  }
+
+  /* subtle breathe during hold */
+  50% {
+    transform: scale(1.015);
+  }
+  70% {
+    transform: scale(1);
+  }
+
+  /* flip out */
+  80% {
+    transform: scaleX(1) scaleY(1);
+    opacity: 1;
+  }
+  90% {
+    transform: scaleX(0) scaleY(0.85);
+    opacity: 0;
+  }
+  100% {
+    transform: scaleX(0) scaleY(0.85);
+    opacity: 0;
+  }
+}
+
+/* ─── Single continuous M-shaped line ───
+   0.3–0.9 s : draw (stroke-dashoffset)
+   0.9–4.0 s : hold
+   4.0–5.0 s : fade out */
+.line {
+  stroke-dasharray: 97;
+  animation: line-cycle 5s ease-out infinite;
+  will-change: stroke-dashoffset, opacity;
+}
+
+@keyframes line-cycle {
+  0%, 6% {
+    stroke-dashoffset: 97;
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  18% {
+    stroke-dashoffset: 0;
+  }
+  80% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0;
+  }
+}
+
+/* ─── Nodes at M joints / endpoints ───
+   Appear in sync as the pen reaches each point,
+   scale up with slight overshoot, then hold. */
+
+.dot {
+  will-change: transform, opacity;
+}
+
+.dot1 {
+  animation: dot1-cycle 5s ease-out infinite;
+  transform-origin: 68px 95px;
+  transform-box: fill-box;
+}
+
+.dot2 {
+  animation: dot2-cycle 5s ease-out infinite;
+  transform-origin: 100px 108px;
+  transform-box: fill-box;
+}
+
+.dot3 {
+  animation: dot3-cycle 5s ease-out infinite;
+  transform-origin: 132px 55px;
+  transform-box: fill-box;
+}
+
+/* Node 1 — left endpoint, pen hits at ~0.3 s */
+@keyframes dot1-cycle {
+  0%, 6% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  10% {
+    transform: scale(1.18);
+    opacity: 1;
+  }
+  14% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  80% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+/* Node 2 — turning point (valley), pen hits at ~0.5 s */
+@keyframes dot2-cycle {
+  0%, 10% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  14% {
+    transform: scale(1.18);
+    opacity: 1;
+  }
+  18% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  80% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+/* Node 3 — right endpoint, pen hits at ~0.9 s */
+@keyframes dot3-cycle {
+  0%, 16% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  20% {
+    transform: scale(1.18);
+    opacity: 1;
+  }
+  24% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  80% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+/* ─── Wordmark below the circle ───
+   0.9–1.3 s : fade in + slide up
+   1.3–4.0 s : hold
+   4.0–5.0 s : fade out */
+.text {
+  animation: text-cycle 5s ease-out infinite;
+  transform-origin: 100px 158px;
+  will-change: opacity, transform;
+}
+
+@keyframes text-cycle {
+  0%, 18% {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  26% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-3px);
+  }
+}

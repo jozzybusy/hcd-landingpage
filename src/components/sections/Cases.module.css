@@ -1,0 +1,99 @@
+.cases {
+  background: var(--gray-bg);
+  padding: var(--section-pad) 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 64px;
+}
+
+.card {
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: transform 0.25s;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.featured {
+  grid-row: span 2;
+  min-height: 580px;
+}
+
+.cardBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Ccircle cx='350' cy='50' r='200' fill='rgba(255,255,255,0.05)'/%3E%3Ccircle cx='50' cy='350' r='150' fill='rgba(255,255,255,0.04)'/%3E%3C/svg%3E") center/cover;
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border-radius: 20px;
+  padding: 5px 14px;
+  margin-bottom: 16px;
+  backdrop-filter: blur(8px);
+  align-self: flex-start;
+  position: relative;
+  z-index: 1;
+}
+
+.card h3 {
+  font-size: 26px;
+  font-weight: 900;
+  color: white;
+  letter-spacing: -0.5px;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.card p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.7;
+  position: relative;
+  z-index: 1;
+}
+
+.read {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--green-yellow);
+  font-size: 14px;
+  font-weight: 700;
+  margin-top: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .featured {
+    grid-row: auto;
+    min-height: 280px;
+  }
+}

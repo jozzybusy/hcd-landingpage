@@ -1,0 +1,78 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: var(--radius-xl);
+  font-size: 15px;
+  font-weight: 700;
+  padding: 14px 32px;
+  transition: transform 0.15s, box-shadow 0.15s, background 0.2s, border-color 0.2s;
+  white-space: nowrap;
+}
+
+/* === 主按钮：黄绿色背景 === */
+.primary {
+  background: var(--green-yellow);
+  color: var(--black);
+}
+
+.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* === 次按钮：透明边框（用于深色背景） === */
+.secondary {
+  background: transparent;
+  color: var(--white);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  padding: 12px 28px;
+  font-weight: 500;
+}
+
+.secondary:hover {
+  border-color: var(--white);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* === 深色按钮 === */
+.dark {
+  background: var(--black);
+  color: var(--white);
+  padding: 16px 36px;
+  font-size: 16px;
+}
+
+.dark:hover {
+  background: var(--purple);
+  transform: translateY(-2px);
+}
+
+/* === 深色描边按钮（用于浅色背景） === */
+.outlineDark {
+  background: transparent;
+  color: var(--black);
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  padding: 14px 32px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.outlineDark:hover {
+  border-color: var(--black);
+  background: rgba(0, 0, 0, 0.06);
+}
+
+/* === 黑色描边按钮 === */
+.blackOutline {
+  background: transparent;
+  color: var(--black);
+  border: 2px solid var(--black);
+  padding: 12px 28px;
+  font-weight: 500;
+}
+
+.blackOutline:hover {
+  background: rgba(0, 0, 0, 0.06);
+}

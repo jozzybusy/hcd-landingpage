@@ -1,0 +1,396 @@
+.page {
+  padding-top: 64px;
+}
+
+/* === Hero === */
+.hero {
+  background: var(--purple);
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroShape1 {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: var(--teal);
+  border-radius: 50%;
+  top: -120px;
+  right: -100px;
+  opacity: 0.85;
+}
+
+.heroShape2 {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  background: var(--green-yellow);
+  border-radius: 50%;
+  bottom: 40px;
+  left: 60px;
+  opacity: 0.9;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  max-width: 640px;
+}
+
+.heroLabel {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 16px;
+}
+
+.heroTitle {
+  font-size: clamp(40px, 6vw, 64px);
+  font-weight: 900;
+  line-height: 1.05;
+  color: var(--white);
+  margin-bottom: 24px;
+  letter-spacing: -2px;
+}
+
+.accent {
+  color: var(--green-yellow);
+}
+
+.heroDesc {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.75;
+  white-space: nowrap;
+  max-width: none;
+}
+
+/* === 使命愿景价值观 === */
+.values {
+  background: var(--white);
+  padding: var(--section-pad) 0;
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.valueCard {
+  background: var(--gray-bg);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+}
+
+.valueLabel {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--purple);
+  margin-bottom: 16px;
+}
+
+.valueCard h3 {
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: -0.5px;
+}
+
+.valuesList {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.valueItem {
+  background: var(--gray-light);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  border-top: 3px solid var(--green-yellow);
+}
+
+.valueItem h4 {
+  font-size: 16px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.valueItem p {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* === 我们的故事 === */
+.story {
+  background: var(--gray-bg);
+  padding: var(--section-pad) 0;
+}
+
+.storyGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--purple);
+  margin-bottom: 16px;
+}
+
+.storyVisual {
+  position: relative;
+  background: var(--purple);
+  border-radius: var(--radius-lg);
+  padding: 48px;
+  overflow: hidden;
+}
+
+.storyShape1 {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: var(--teal);
+  border-radius: 50%;
+  top: -60px;
+  right: -40px;
+  opacity: 0.8;
+}
+
+.storyShape2 {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: var(--pink);
+  border-radius: 50%;
+  bottom: -20px;
+  left: 40px;
+}
+
+.storyStats {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.storyStat {
+  text-align: center;
+}
+
+.storyStatNum {
+  font-size: 40px;
+  font-weight: 900;
+  color: var(--green-yellow);
+  letter-spacing: -1px;
+}
+
+.storyStatLabel {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 4px;
+}
+
+/* === 发展历程 === */
+.timeline {
+  background: var(--white);
+  padding: var(--section-pad) 0;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.timelineList {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.timelineList::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--gray-light);
+  transform: translateX(-50%);
+}
+
+.timelineItem {
+  position: relative;
+  width: 50%;
+  padding: 0 40px 40px;
+}
+
+.timelineItem.left {
+  left: 0;
+  text-align: right;
+}
+
+.timelineItem.right {
+  left: 50%;
+}
+
+.timelineContent {
+  position: relative;
+  background: var(--gray-bg);
+  border-radius: var(--radius-md);
+  padding: 24px;
+}
+
+.timelineContent::before {
+  content: '';
+  position: absolute;
+  top: 24px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--purple);
+}
+
+.timelineItem.left .timelineContent::before {
+  right: -47px;
+}
+
+.timelineItem.right .timelineContent::before {
+  left: -47px;
+}
+
+.timelineYear {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 900;
+  color: var(--purple);
+  margin-bottom: 8px;
+}
+
+.timelineContent p {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* === 数据统计 === */
+.statsSection {
+  background: var(--purple);
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.statsShape1 {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: var(--teal);
+  border-radius: 50%;
+  top: -100px;
+  right: -80px;
+  opacity: 0.3;
+}
+
+.statsShape2 {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  background: var(--green-yellow);
+  border-radius: 50%;
+  bottom: -60px;
+  left: 100px;
+  opacity: 0.3;
+}
+
+.statsGrid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  text-align: center;
+}
+
+.statBlock {
+  border-right: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.statBlock:last-child {
+  border-right: none;
+}
+
+.statNum {
+  font-size: 48px;
+  font-weight: 900;
+  color: var(--green-yellow);
+  letter-spacing: -1px;
+}
+
+.statLabel {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 8px;
+}
+
+/* === 响应式 === */
+@media (max-width: 900px) {
+  .valuesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .valuesList {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .storyGrid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .timelineList::before {
+    left: 20px;
+  }
+
+  .timelineItem {
+    width: 100%;
+    left: 0 !important;
+    text-align: left !important;
+    padding: 0 0 24px 56px;
+  }
+
+  .timelineItem .timelineContent::before {
+    left: 13px !important;
+    right: auto !important;
+  }
+
+  .statsGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .statBlock {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    padding-bottom: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .valuesList {
+    grid-template-columns: 1fr;
+  }
+}

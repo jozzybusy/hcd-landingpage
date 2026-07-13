@@ -1,0 +1,518 @@
+.wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.svg {
+  width: 100%;
+  height: 100%;
+  max-width: 280px;
+  max-height: 240px;
+  overflow: visible;
+}
+
+/* ════════════════════════════════════════
+   SHARED TIMING
+   ════════════════════════════════════════ */
+
+/*
+  Total loop: 3 s.
+  Smooth cubic-bezier easing used throughout for a premium,
+  human-centered feel.
+*/
+
+.emblem,
+.figures,
+.figureCenter,
+.figureLeft,
+.figureRight,
+.bodyCenter,
+.headCenter,
+.bodyLeft,
+.headLeft,
+.bodyRight,
+.headRight,
+.ring,
+.glow,
+.wordChange,
+.wordMan,
+.registered,
+.wordmarkBg,
+.lightSweep,
+.clipChange,
+.clipMan,
+.clipRegistered {
+  animation-duration: 3s;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+}
+
+/* ════════════════════════════════════════
+   EMBLEM
+   ════════════════════════════════════════ */
+
+.emblem {
+  transform-origin: 180px 110px;
+  animation-name: emblemReveal;
+}
+
+.disc {
+  filter: drop-shadow(0 6px 18px rgba(74, 47, 191, 0.35));
+}
+
+@keyframes emblemReveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  12% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  88% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+}
+
+/* ════════════════════════════════════════
+   OUTER RING — draws itself around symbol
+   ════════════════════════════════════════ */
+
+.ring {
+  transform-origin: 180px 110px;
+  animation-name: ringDraw;
+  /* Circumference ≈ 2π × 82 ≈ 515 */
+  stroke-dasharray: 515;
+  stroke-dashoffset: 515;
+}
+
+@keyframes ringDraw {
+  0%, 55% {
+    stroke-dashoffset: 515;
+    opacity: 0.4;
+  }
+  72% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  88% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 515;
+    opacity: 0.4;
+  }
+}
+
+/* ════════════════════════════════════════
+   BACKGROUND GLOW
+   ════════════════════════════════════════ */
+
+.glow {
+  transform-origin: 180px 110px;
+  animation-name: glowPulse;
+  pointer-events: none;
+}
+
+@keyframes glowPulse {
+  0% {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  20% {
+    opacity: 0.45;
+    transform: scale(1.08);
+  }
+  45% {
+    opacity: 0.55;
+    transform: scale(1.15);
+  }
+  70% {
+    opacity: 0.35;
+    transform: scale(1.02);
+  }
+  88% {
+    opacity: 0.35;
+    transform: scale(1.02);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+}
+
+/* ════════════════════════════════════════
+   FIGURES
+   ════════════════════════════════════════ */
+
+.figures {
+  transform-origin: 180px 110px;
+  animation-name: figuresSettle;
+}
+
+.figureCenter {
+  transform-origin: 180px 110px;
+  animation-name: figureCenterCycle;
+}
+
+.figureLeft {
+  transform-origin: 122px 110px;
+  animation-name: figureLeftCycle;
+}
+
+.figureRight {
+  transform-origin: 238px 110px;
+  animation-name: figureRightCycle;
+}
+
+/* Central figure gently expands upward during synchronization */
+.bodyCenter {
+  transform-origin: 180px 118px;
+  animation-name: bodyCenterCycle;
+}
+
+.headCenter {
+  transform-origin: 180px 68px;
+  animation-name: headCenterCycle;
+}
+
+@keyframes figuresSettle {
+  0% {
+    opacity: 0.55;
+    transform: scale(0.96);
+  }
+  12% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  88% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.55;
+    transform: scale(0.96);
+  }
+}
+
+@keyframes figureCenterCycle {
+  0%, 12% {
+    transform: translateY(-8px) scale(0.98);
+  }
+  25% {
+    /* disconnected state */
+    transform: translateY(-12px) scale(0.96);
+  }
+  38% {
+    /* wave peak */
+    transform: translateY(-6px) scale(0.98);
+  }
+  55% {
+    /* begin synchronization */
+    transform: translateY(0) scale(1);
+  }
+  70% {
+    /* central figure expands upward */
+    transform: translateY(-4px) scale(1.04);
+  }
+  88% {
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    transform: translateY(-8px) scale(0.98);
+  }
+}
+
+@keyframes figureLeftCycle {
+  0%, 12% {
+    transform: translate(-8px, 6px) rotate(-4deg);
+  }
+  25% {
+    /* disconnected */
+    transform: translate(-14px, 10px) rotate(-7deg);
+  }
+  42% {
+    /* wave reaches left figure later than center */
+    transform: translate(-10px, 6px) rotate(-5deg);
+  }
+  58% {
+    transform: translate(-4px, 2px) rotate(-2deg);
+  }
+  70% {
+    transform: translate(0) rotate(0deg);
+  }
+  88% {
+    transform: translate(0) rotate(0deg);
+  }
+  100% {
+    transform: translate(-8px, 6px) rotate(-4deg);
+  }
+}
+
+@keyframes figureRightCycle {
+  0%, 12% {
+    transform: translate(8px, 6px) rotate(4deg);
+  }
+  25% {
+    /* disconnected */
+    transform: translate(14px, 10px) rotate(7deg);
+  }
+  46% {
+    /* wave reaches right figure last */
+    transform: translate(10px, 6px) rotate(5deg);
+  }
+  60% {
+    transform: translate(4px, 2px) rotate(2deg);
+  }
+  70% {
+    transform: translate(0) rotate(0deg);
+  }
+  88% {
+    transform: translate(0) rotate(0deg);
+  }
+  100% {
+    transform: translate(8px, 6px) rotate(4deg);
+  }
+}
+
+@keyframes bodyCenterCycle {
+  0%, 55% {
+    transform: scaleY(1);
+  }
+  70% {
+    /* central figure grows upward */
+    transform: scaleY(1.12);
+  }
+  88% {
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes headCenterCycle {
+  0%, 55% {
+    transform: translateY(0);
+  }
+  70% {
+    transform: translateY(-6px);
+  }
+  88% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* ════════════════════════════════════════
+   WORDMARK — clean left-to-right reveal
+   ════════════════════════════════════════ */
+
+.wordmark {
+  font-family: 'Space Grotesk', 'Noto Sans SC', sans-serif;
+  text-rendering: geometricPrecision;
+}
+
+.wordmarkBg {
+  fill: #FFFFFF;
+  fill-opacity: 0.92;
+  filter: drop-shadow(0 4px 12px rgba(74, 47, 191, 0.12));
+  opacity: 0;
+  animation-name: wordmarkBgReveal;
+}
+
+@keyframes wordmarkBgReveal {
+  0%, 55% {
+    opacity: 0;
+    transform: scale(0.96);
+    transform-origin: 180px 235px;
+  }
+  65% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  90% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+}
+
+.wordChange {
+  font-size: 52px;
+  font-weight: 500;
+  letter-spacing: -1.5px;
+  fill: #9A9CA4;
+}
+
+.wordMan {
+  font-size: 52px;
+  font-weight: 700;
+  letter-spacing: -1.5px;
+  fill: #7C5CFC;
+}
+
+.registered {
+  font-size: 16px;
+  font-weight: 600;
+  fill: #9A9CA4;
+}
+
+.clipChange {
+  animation-name: revealChange;
+}
+
+.clipMan {
+  animation-name: revealMan;
+}
+
+.clipRegistered {
+  animation-name: revealRegistered;
+}
+
+@keyframes revealChange {
+  0%, 62% {
+    width: 0;
+  }
+  76% {
+    width: 170px;
+  }
+  90% {
+    width: 170px;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes revealMan {
+  0%, 76% {
+    width: 0;
+  }
+  86% {
+    width: 108px;
+  }
+  90% {
+    width: 108px;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes revealRegistered {
+  0%, 82% {
+    width: 0;
+  }
+  88% {
+    width: 16px;
+  }
+  90% {
+    width: 16px;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+/* ════════════════════════════════════════
+   LIGHT SWEEP
+   ════════════════════════════════════════ */
+
+.lightSweep {
+  opacity: 0;
+  animation-name: lightSweep;
+  pointer-events: none;
+}
+
+@keyframes lightSweep {
+  0%, 86% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  89% {
+    opacity: 1;
+  }
+  96% {
+    opacity: 1;
+    transform: translateX(260px);
+  }
+  97% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(260px);
+  }
+}
+
+/* ════════════════════════════════════════
+   REDUCED MOTION
+   ════════════════════════════════════════ */
+
+@media (prefers-reduced-motion: reduce) {
+  .emblem,
+  .figures,
+  .figureCenter,
+  .figureLeft,
+  .figureRight,
+  .bodyCenter,
+  .headCenter,
+  .ring,
+  .glow,
+  .wordChange,
+  .wordMan,
+  .registered,
+  .wordmarkBg,
+  .lightSweep,
+  .clipChange,
+  .clipMan,
+  .clipRegistered {
+    animation: none;
+  }
+
+  .ring {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+
+  .wordChange,
+  .wordMan,
+  .registered,
+  .wordmarkBg {
+    opacity: 1;
+  }
+
+  .clipChange {
+    width: 170px;
+  }
+
+  .clipMan {
+    width: 108px;
+  }
+
+  .clipRegistered {
+    width: 16px;
+  }
+
+  .lightSweep {
+    opacity: 0;
+  }
+}

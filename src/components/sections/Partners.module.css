@@ -1,0 +1,22 @@
+.partners {
+  background: var(--white);
+  padding: var(--section-pad) 0;
+}
+
+.descNowrap {
+  white-space: nowrap;
+  max-width: none;
+}
+
+.loopWrapper {
+  height: 120px;
+  margin-top: 64px;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 900px) {
+  .loopWrapper {
+    margin-top: 40px;
+  }
+}

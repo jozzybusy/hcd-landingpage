@@ -1,0 +1,325 @@
+.page {
+  padding-top: 64px;
+}
+
+/* === Hero === */
+.hero {
+  background: var(--purple);
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroShape1 {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: var(--teal);
+  border-radius: 50%;
+  top: -120px;
+  right: -100px;
+  opacity: 0.85;
+}
+
+.heroShape2 {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  background: var(--green-yellow);
+  border-radius: 50%;
+  bottom: 40px;
+  left: 60px;
+  opacity: 0.9;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  max-width: 640px;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 24px;
+}
+
+.breadcrumb a:hover {
+  color: var(--white);
+}
+
+.current {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.heroLabel {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 16px;
+}
+
+.heroTitle {
+  font-size: clamp(40px, 6vw, 64px);
+  font-weight: 900;
+  line-height: 1.05;
+  line-height: 1.05;
+  color: var(--white);
+  margin-bottom: 24px;
+  letter-spacing: -2px;
+}
+
+.accent {
+  color: var(--green-yellow);
+}
+
+.heroDesc {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.75;
+  max-width: 480px;
+  margin-bottom: 40px;
+}
+
+.heroStats {
+  display: flex;
+  gap: 48px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.statNum {
+  font-size: 36px;
+  font-weight: 900;
+  color: var(--green-yellow);
+  letter-spacing: -1px;
+}
+
+.statLabel {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.65);
+  margin-top: 2px;
+}
+
+/* === 筛选栏 === */
+.filterBar {
+  background: var(--white);
+  padding: 24px 0;
+  border-bottom: 1px solid var(--gray-light);
+  position: sticky;
+  top: 64px;
+  z-index: 50;
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.filterRow {
+  display: flex;
+  gap: 48px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.filterGroup {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.filterLabel {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.filterOptions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filterBtn {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+  padding: 6px 16px;
+  border-radius: 20px;
+  transition: all 0.2s;
+}
+
+.filterBtn:hover {
+  color: var(--black);
+  background: var(--gray-bg);
+}
+
+.filterBtn.active {
+  background: var(--black);
+  color: var(--white);
+}
+
+/* === 案例区 === */
+.casesSection {
+  background: var(--gray-bg);
+  padding: var(--section-pad) 0;
+}
+
+.resultInfo {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 32px;
+}
+
+.resultInfo strong {
+  color: var(--purple);
+  font-size: 16px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.card {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: transform 0.25s;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.featured {
+  grid-row: span 2;
+}
+
+.cardLink {
+  display: block;
+  height: 100%;
+  min-height: 280px;
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border-radius: 20px;
+  padding: 5px 14px;
+  margin-bottom: 16px;
+  backdrop-filter: blur(8px);
+  align-self: flex-start;
+}
+
+.cardBody {
+  position: relative;
+  z-index: 1;
+}
+
+.cardTags {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.cardTag {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 16px;
+}
+
+.cardBody h3 {
+  font-size: 22px;
+  font-weight: 900;
+  color: white;
+  letter-spacing: -0.5px;
+  margin-bottom: 10px;
+}
+
+.cardBody p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.7;
+}
+
+.read {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--green-yellow);
+  font-size: 14px;
+  font-weight: 700;
+  font-weight: 700;
+  margin-top: 20px;
+}
+
+/* === 空状态 === */
+.empty {
+  text-align: center;
+  padding: 80px 0;
+}
+
+.emptyIcon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.empty p {
+  font-size: 16px;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+.resetBtn {
+  background: var(--purple);
+  color: var(--white);
+  border-radius: var(--radius-xl);
+  padding: 12px 28px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.resetBtn:hover {
+  background: var(--purple-dark);
+}
+
+/* === 响应式 === */
+@media (max-width: 900px) {
+  .filterRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .featured {
+    grid-row: auto;
+  }
+
+  .heroStats {
+    gap: 24px;
+  }
+}

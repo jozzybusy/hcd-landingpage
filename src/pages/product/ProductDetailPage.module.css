@@ -1,0 +1,438 @@
+.page {
+  padding-top: 64px;
+}
+
+/* === Hero === */
+.hero {
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroImageWrapper {
+  position: absolute;
+  right: 11%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 46%;
+  max-width: 580px;
+  z-index: 1;
+  perspective: 1000px;
+}
+
+.heroImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  transform: rotateY(-22deg) rotateX(3deg);
+  transform-style: preserve-3d;
+  filter: drop-shadow(0 28px 60px rgba(0, 0, 0, 0.28));
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.4s ease;
+}
+
+.heroImageWrapper:hover .heroImage {
+  transform: rotateY(-12deg) rotateX(0deg) scale(1.06);
+  filter: drop-shadow(0 36px 80px rgba(0, 0, 0, 0.35));
+}
+
+.heroShape1 {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  top: -120px;
+  right: -100px;
+}
+
+.heroShape2 {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: var(--green-yellow);
+  border-radius: 50%;
+  bottom: -60px;
+  left: 80px;
+  opacity: 0.3;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  max-width: 640px;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 24px;
+}
+
+.breadcrumb a:hover {
+  color: var(--white);
+}
+
+.current {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.tag {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border-radius: 20px;
+  padding: 5px 14px;
+  margin-bottom: 20px;
+  backdrop-filter: blur(8px);
+}
+
+.heroTitleRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.heroTitle {
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 900;
+  line-height: 1.1;
+  color: var(--white);
+  letter-spacing: -1.5px;
+}
+
+.heroTitleLogo {
+  height: 56px;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
+}
+
+.heroDesc {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.75;
+  margin-bottom: 32px;
+}
+
+.heroActions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.heroMetrics {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  gap: 48px;
+  margin-top: 56px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.metric {
+  text-align: left;
+}
+
+.metricNum {
+  font-size: 36px;
+  font-weight: 900;
+  color: var(--green-yellow);
+  letter-spacing: -1px;
+}
+
+.metricLabel {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.65);
+  margin-top: 2px;
+}
+
+/* === 通用 === */
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--purple);
+  margin-bottom: 16px;
+}
+
+.title {
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+  margin-bottom: 20px;
+}
+
+.titleLight {
+  color: var(--white);
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+  margin-bottom: 20px;
+}
+
+.accent {
+  color: var(--pink);
+}
+
+/* === 痛点挑战 === */
+.painPoints {
+  background: var(--white);
+  padding: var(--section-pad) 0;
+}
+
+.painGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.painCard {
+  background: var(--gray-bg);
+  border-radius: var(--radius-md);
+  padding: 28px;
+  transition: transform 0.2s;
+}
+
+.painCard:hover {
+  transform: translateY(-3px);
+}
+
+.painIcon {
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+
+.painCard h4 {
+  font-size: 16px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.painCard p {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* === 课程体系 === */
+.modules {
+  background: var(--black);
+  padding: var(--section-pad) 0;
+}
+
+.modulesGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.moduleCard {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.moduleCard:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.moduleNum {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 900;
+  color: var(--green-yellow);
+  margin-bottom: 16px;
+}
+
+.moduleCard h3 {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+
+.moduleDays {
+  font-size: 13px;
+  color: var(--green-yellow);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.moduleCard p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.7;
+}
+
+/* === 相关案例 === */
+.relatedCases {
+  background: var(--white);
+  padding: var(--section-pad) 0;
+}
+
+.casesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.caseCard {
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  position: relative;
+  overflow: hidden;
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: transform 0.25s;
+}
+
+.caseCard:hover {
+  transform: scale(1.02);
+}
+
+.caseBadge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border-radius: 20px;
+  padding: 5px 14px;
+  margin-bottom: 16px;
+  backdrop-filter: blur(8px);
+  align-self: flex-start;
+}
+
+.caseCard h3 {
+  font-size: 22px;
+  font-weight: 900;
+  color: white;
+  letter-spacing: -0.5px;
+  margin-bottom: 10px;
+}
+
+.caseCard p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.7;
+}
+
+.caseRead {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--green-yellow);
+  font-size: 14px;
+  font-weight: 700;
+  margin-top: 20px;
+}
+
+/* === CTA === */
+.cta {
+  background: var(--green-yellow);
+  padding: var(--section-pad) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaShape1 {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: var(--orange);
+  border-radius: 50%;
+  top: -80px;
+  right: -60px;
+  opacity: 0.5;
+}
+
+.ctaShape2 {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  background: var(--purple);
+  border-radius: 50%;
+  bottom: -40px;
+  left: 200px;
+  opacity: 0.3;
+}
+
+.ctaInner {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.ctaTitle {
+  font-size: clamp(40px, 6vw, 68px);
+  letter-spacing: -2px;
+}
+
+.ctaDesc {
+  font-size: 17px;
+  color: rgba(0, 0, 0, 0.65);
+  max-width: 500px;
+  margin: 20px auto 40px;
+}
+
+.ctaActions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* === 响应式 === */
+@media (max-width: 900px) {
+  .painGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .modulesGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .heroMetrics {
+    gap: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .painGrid,
+  .modulesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .heroMetrics {
+    flex-direction: column;
+    gap: 16px;
+  }
+}

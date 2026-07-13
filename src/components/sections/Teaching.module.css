@@ -1,0 +1,94 @@
+.teaching {
+  background: var(--white);
+  padding: var(--section-pad) 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.card {
+  border-radius: var(--radius-lg);
+  padding: 48px;
+  position: relative;
+  overflow: hidden;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.online {
+  background: var(--purple);
+}
+
+.offline {
+  background: var(--teal);
+}
+
+.cardShape {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.cardIcon {
+  width: 156px;
+  height: 156px;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 2;
+}
+
+.card h3 {
+  font-size: 32px;
+  font-weight: 900;
+  color: white;
+  letter-spacing: -1px;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 2;
+}
+
+.card p {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.7;
+  position: relative;
+  z-index: 2;
+}
+
+.tags {
+  margin-top: 24px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
+}
+
+.tag {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 20px;
+}
+
+.tagDark {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 32px;
+    min-height: 260px;
+  }
+}

@@ -1,0 +1,243 @@
+.hero {
+  min-height: 100vh;
+  background: var(--purple);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: 64px;
+}
+
+.bgShape {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.shape1 {
+  width: 480px;
+  height: 480px;
+  background: var(--teal);
+  top: -80px;
+  right: -60px;
+  opacity: 0.95;
+  pointer-events: auto;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.centerOverlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 160px;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.overlayItem {
+  position: absolute;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.clickLottie {
+  width: 140px;
+  height: 140px;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.clickLottieHidden {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.startText {
+  color: var(--white);
+  font-size: 40px;
+  font-weight: 900;
+  text-align: center;
+  white-space: nowrap;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.startTextVisible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.shape2 {
+  width: 220px;
+  height: 220px;
+  background: var(--green-yellow);
+  bottom: 80px;
+  right: 60px;
+  border-radius: 50%;
+  opacity: 0.9;
+}
+
+.shape3 {
+  width: 120px;
+  height: 120px;
+  background: var(--orange);
+  bottom: 200px;
+  right: 180px;
+  border-radius: 50%;
+}
+
+.shapeBird {
+  position: absolute;
+  right: 80px;
+  top: 50%;
+  transform: translate(-10vw, -50%);
+  width: auto;
+  height: 49.5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lottie {
+  height: 49.5vh;
+  width: auto;
+  max-width: 630px;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 80px var(--container-pad);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--white);
+  border-radius: var(--radius-xl);
+  padding: 6px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 28px;
+  backdrop-filter: blur(8px);
+}
+
+.badgeDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--green-yellow);
+}
+
+.title {
+  font-size: clamp(44px, 6vw, 72px);
+  font-weight: 900;
+  line-height: 1.05;
+  color: var(--white);
+  margin-bottom: 24px;
+  letter-spacing: -2px;
+}
+
+.highlight {
+  color: var(--green-yellow);
+}
+
+.desc {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.75;
+  max-width: 480px;
+  margin-bottom: 40px;
+}
+
+.actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.stats {
+  display: flex;
+  gap: 48px;
+  margin-top: 56px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.statNum {
+  font-size: 36px;
+  font-weight: 900;
+  color: var(--green-yellow);
+  letter-spacing: -1px;
+}
+
+.statLabel {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.65);
+  margin-top: 2px;
+}
+
+.trustedBar {
+  background: rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 20px 48px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  position: relative;
+  z-index: 2;
+}
+
+.trustedLabel {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  white-space: nowrap;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.trustedLogos {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.trustedLogo {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: -0.5px;
+}
+
+@media (max-width: 900px) {
+  .content {
+    padding: 80px 24px 40px;
+  }
+
+  .shapeBird {
+    display: none;
+  }
+
+  .stats {
+    gap: 28px;
+  }
+
+  .trustedBar {
+    padding: 20px 24px;
+  }
+}
