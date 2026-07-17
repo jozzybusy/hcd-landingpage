@@ -3,6 +3,7 @@ import SectionHeader from '../ui/SectionHeader.jsx'
 import Reveal from '../shared/Reveal.jsx'
 import ProgrammingComputerLottie from '../animations/ProgrammingComputerLottie.jsx'
 import SaasMeetingLottie from '../animations/SaasMeetingLottie.jsx'
+import OnlineTeachingLottie from '../animations/OnlineTeachingLottie.jsx'
 import styles from './Teaching.module.css'
 
 function Teaching() {
@@ -45,6 +46,21 @@ function Teaching() {
             <div className={styles.tags}>
               {s.offline.tags.map((tag) => (
                 <span key={tag} className={`${styles.tag} ${styles.tagDark}`}>{tag}</span>
+              ))}
+            </div>
+          </div>
+
+          <div className={`${styles.card} ${styles.blended}`}>
+            <div className={styles.cardShape} style={{ width: '180px', height: '180px', background: 'rgba(255,255,255,0.1)', top: '-50px', right: '-30px', borderRadius: '50%' }}></div>
+            <div className={styles.cardShape} style={{ width: '100px', height: '100px', background: 'rgba(0,0,0,0.12)', bottom: '50px', left: '30px', borderRadius: '50%' }}></div>
+            <div className={styles.cardIcon}>
+              <OnlineTeachingLottie />
+            </div>
+            <h3>{s.blended.title}</h3>
+            <p>{s.blended.desc}</p>
+            <div className={styles.tags}>
+              {s.blended.tags.map((tag) => (
+                <span key={tag} className={styles.tag}>{tag}</span>
               ))}
             </div>
           </div>

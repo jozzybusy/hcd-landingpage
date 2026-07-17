@@ -4,6 +4,7 @@ import ScrollToTop from './components/layout/ScrollToTop.jsx'
 import HomePage from './pages/HomePage.jsx'
 import AboutPage from './pages/about/AboutPage.jsx'
 import ProductDetailPage from './pages/product/ProductDetailPage.jsx'
+import OpenCoursesPage from './pages/courses/OpenCoursesPage.jsx'
 import CasesListPage from './pages/cases/CasesListPage.jsx'
 import CaseDetailPage from './pages/cases/CaseDetailPage.jsx'
 import ContactPage from './pages/contact/ContactPage.jsx'
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/products/:slug" element={<ProductDetailPage />} />
+          <Route path="/courses" element={<OpenCoursesPage />} />
           <Route path="/cases" element={<CasesListPage />} />
           <Route path="/cases/:slug" element={<CaseDetailPage />} />
           <Route path="/contact" element={<ContactPage />} />

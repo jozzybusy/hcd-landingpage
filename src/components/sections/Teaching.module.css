@@ -1,11 +1,11 @@
 .teaching {
-  background: var(--white);
+  background: var(--gray-bg);
   padding: var(--section-pad) 0;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
 
@@ -17,7 +17,7 @@
   min-height: 320px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 
 .online {
@@ -26,6 +26,10 @@
 
 .offline {
   background: var(--teal);
+}
+
+.blended {
+  background: var(--pink);
 }
 
 .cardShape {
@@ -47,17 +51,29 @@
   font-weight: 900;
   color: white;
   letter-spacing: -1px;
+  line-height: 1.2;
   margin-bottom: 12px;
   position: relative;
   z-index: 2;
+  white-space: nowrap;
 }
 
 .card p {
   font-size: 15px;
   color: rgba(255, 255, 255, 0.75);
   line-height: 1.7;
+  min-height: 104px;
   position: relative;
   z-index: 2;
+}
+
+:global(html[lang='en']) .card h3 {
+  font-size: 18px;
+  letter-spacing: -0.3px;
+}
+
+:global(html[lang='en']) .card p {
+  min-height: 180px;
 }
 
 .tags {

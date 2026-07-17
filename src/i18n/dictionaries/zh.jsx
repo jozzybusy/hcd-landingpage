@@ -20,6 +20,8 @@ const zh = {
     consultNow: '立即咨询',
     bookConsult: '立即预约咨询',
     downloadPlan: '下载方案',
+    playGame: '体验游戏',
+    watchVideo: '观看视频',
     viewServices: '查看服务方案',
     gameBasedSim: '游戏化模拟课程',
   },
@@ -93,20 +95,25 @@ const zh = {
       label: '教学形式',
       title: (
         <>
-          线上 ✖️ 线下<br />
-          <span style={{ color: 'var(--green-yellow)' }}>双模式赋能</span>
+          线上 ✖️ 线下 ✖️ 混合<br />
+          <span style={{ color: 'var(--green-yellow)' }}>多模式赋能</span>
         </>
       ),
       desc: '灵活适配企业游戏化模拟课程需求，随时随地开启高效学习旅程。',
       online: {
-        title: '线上游戏化模拟课程',
+        title: '线上模拟课程',
         desc: '打破时空限制，通过多人实时3D游戏、SaaS软件、视频会议等多种方式，随时随地高效学习。支持实时互动与学习数据追踪。',
         tags: ['3D游戏', ' SaaS软件', '视频会议'],
       },
       offline: {
-        title: '线下游戏化模拟课程',
+        title: '线下模拟课程',
         desc: '面对面沉浸式学习体验，讲师现场指导与实战演练相结合，深度激发团队潜能，促进组织融合。',
         tags: ['沙盘演练', '工作坊', '拓展训练'],
+      },
+      blended: {
+        title: '混合式教学',
+        desc: '线上赋能 + 线下深潜的融合方案，课前线上预习与测评，课中线下实战演练，课后线上复盘与数据追踪，全周期学习闭环。',
+        tags: ['线上预习', '线下实战', '数据复盘'],
       },
     },
     lecturers: {
@@ -165,6 +172,42 @@ const zh = {
       ),
       timelineLabel: '发展历程',
       timelineTitle: <>20年<span className="accent">成长之路</span></>,
+    },
+    openCoursesList: {
+      breadcrumbHome: '首页',
+      breadcrumbCourses: '公开课',
+      heroLabel: '公开课计划',
+      heroTitle: (
+        <>
+          2026 全年<span className="accent">公开课日历</span>
+        </>
+      ),
+      heroDesc: '覆盖商战模拟、组织变革、团队协同等核心主题，全年滚动开班。北京、上海、深圳三城联动，总有一场离你很近。',
+      stats: {
+        courses: '全年场次',
+        cities: '开课城市',
+        months: '覆盖月份',
+      },
+      filterRegion: '区域',
+      regions: {
+        all: '全部',
+        north: '北区',
+        south: '南区',
+        east: '东区',
+      },
+      resultInfo: '共 {count} 场公开课',
+      monthNames: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
+      labels: {
+        city: '城市',
+        lecturer: '讲师',
+        time: '时间',
+      },
+      register: '立即报名 →',
+      emptyText: '该区域暂无排期',
+      reset: '查看全部',
+      ctaTitle: '没找到合适的场次？',
+      ctaDesc: '联系我们的顾问，获取最新排期或定制企业专属内训方案。',
+      ctaButton: '联系我们 →',
     },
     casesList: {
       breadcrumbHome: '首页',
@@ -241,8 +284,9 @@ const zh = {
           talent: { icon: '⚖️', title: '团队冲突未化解，五障碍拖累绩效', desc: '融合兰西奥尼团队协作五障碍理论，让团队识别并克服缺乏信任、惧怕冲突等顽疾，释放合力。' },
         },
       },
-      modulesLabel: '课程体系',
-      modulesTitle: <><span style={{ color: 'var(--green-yellow)' }}>四阶</span>成长路径</>,
+      modulesLabel: '课程内容',
+      modulesTitle: <><span style={{ color: 'var(--green-yellow)' }}>适用</span>企业场景</>,
+      modulesTitleAlt: <><span style={{ color: 'var(--green-yellow)' }}>四步</span>模拟推演</>,
       modulesMeta: ' · 适合人群：',
       relatedCasesLabel: '相关案例',
       relatedCasesTitle: <>看看<span className="accent">谁</span>选择了它</>,
@@ -364,18 +408,18 @@ const zh = {
         tag: '经营模拟',
         shortDesc: '综合分析，动态决策，在充满变化的模拟商战中进化决策力',
         fullDesc: '全球首个基于新兴市场数据打造的商战模拟，由中欧国际工商学院前院长领衔研发。学员在高仿真的市场环境中，依靠真实数据制定战略，在动态竞争中追求市场份额与利润的最大化。平台提供线上与线下两种版本，适配从一线高潜到高层的不同人群，有效锤炼战略思维、数据分析与系统决策能力。目前已被全球超过1800家顶尖企业与商学院采用，学员完成率高达98%。',
-        duration: '按需定制（通常4-12周）',
-        audience: '全层级员工/特定团队',
+        duration: '按需定制（通常2-3天）',
+        audience: 'CXO/特定团队',
         metrics: {
           projects: '定制项目',
           retention: '复购率',
           rating: '平均评分',
         },
         modules: {
-          research: { name: '需求调研', days: '1-2周', desc: '深度访谈、能力测评、差距分析' },
-          design: { name: '方案设计', days: '1-2周', desc: '定制课程体系与学习路径' },
-          develop: { name: '专属开发', days: '2-4周', desc: '结合企业案例开发课程内容' },
-          deliver: { name: '交付实施', days: '按需', desc: '线上线下融合交付' },
+          research: { name: '市场调研', days: '团队协作', desc: 'MarkSimos模拟了一个高度竞争、动态变化的市场，多家公司在该市场中平行激烈竞争' },
+          design: { name: '分析数据', days: 'AI辅助', desc: '竞争者们从出发地开始，他们拥有充分透明的市场信息，拥有可调配的资源，但每个竞争公司的起点并不完全一致' },
+          develop: { name: '制定策略', days: '团队商讨', desc: '竞争者们针对明确的KPI指标，通过经营模拟的企业，实现市场份额和累计净利润的最大化，以此角逐出市场中的最强者' },
+          deliver: { name: '做出决策', days: '一锤定音', desc: '竞争者们需要在有限的资源和时间内快速洞察并做出商业决策，平衡产品、品牌、渠道等各种维度，实现公司ROI最大化' },
         },
       },
       'skill-accelerator': {
@@ -383,18 +427,18 @@ const zh = {
         tag: '3D游戏',
         shortDesc: '知己解彼，团队合力，发挥成员优势，构建高绩效团队',
         fullDesc: '一款聚焦自我觉察与团队协作的沉浸式游戏课程。以塔克曼团队发展模型和兰西奥尼团队协作五障碍为理论背景，通过荒岛逃生等闯关式场景，让学员在协作中观察自己与他人的思维与行为模式，建立深度信任与高效协同。特别适合团队融合、跨部门协作、大型团建等场景。',
-        duration: '4-6周混合式学习',
-        audience: '关键岗位员工、业务骨干',
+        duration: '1-2天线上或线下学习',
+        audience: '公司全员',
         metrics: {
           trainees: '参训学员',
           performance: '业绩提升',
           efficiency: '效率提升',
         },
         modules: {
-          digital: { name: '数字化思维', days: '2周', desc: '数据驱动决策与数字化工具应用' },
-          sales: { name: '销售精进', days: '2周', desc: '大客户销售与谈判实战' },
-          innovation: { name: '创新思维', days: '1周', desc: '设计思维与创新能力培养' },
-          report: { name: '成果汇报', days: '1周', desc: '实战项目展示与评估' },
+          digital: { name: '破冰', days: '全新团队', desc: '新团队组建之初的破冰活动' },
+          sales: { name: '磨合', days: '新老结合', desc: '帮助团队内部新老员工度过磨合期' },
+          innovation: { name: '重建', days: '创新项目组', desc: '跨部门重建信任与协同' },
+          report: { name: '认知', days: '公司全体', desc: '提升自我认知，定位团队角色' },
         },
       },
     },
@@ -543,19 +587,19 @@ const zh = {
     },
     courses: {
       items: [
-        { title: 'TS南区公开课', date: '2026年8月7日', lecturer: '彩波', location: '深圳', spots: '开放报名中' },
-        { title: 'CMai华东认证公开课', date: '2026年8月13-14日', lecturer: 'Olive', location: '上海', spots: '开放报名中' },
-        { title: 'CM+TC北区公开课', date: '2026年8月28日', lecturer: 'Olive', location: '北京', spots: '开放报名中' },
-        { title: 'TS华东公开体验课', date: '2026年9月4日', lecturer: 'Julia', location: '上海', spots: '火热报名中' },
-        { title: 'MSai华东公开体验课', date: '2026年10月22日', lecturer: 'Olive', location: '上海', spots: '开放报名中' },
+        { title: 'TeamSynergy-AI时代的团队协同（AI时代下如何带兵持续打胜战）', date: '2026年8月7日', lecturer: '彩波', location: '深圳', spots: '开放报名中' },
+        { title: 'ChangeMan AI版变革领导力认证（引领变革，穿越变化周期）', date: '2026年8月13-14日', lecturer: 'Olive', location: '上海', spots: '开放报名中' },
+        { title: 'ChangeMan变革领导力（演示TypeCoach）+ TypeCoach', date: '2026年8月28日', lecturer: 'Olive', location: '北京', spots: '开放报名中' },
+        { title: 'ChangeMan变革领导力（引领变革，穿越变化周期）+ TeamSynergy-AI时代的团队协同（AI时代下如何带兵持续打胜战）', date: '2026年9月4日', lecturer: 'Julia', location: '上海', spots: '火热报名中' },
+        { title: 'MarkSimos像CEO一样思考与行动（AI版，掌握经典商业思维）', date: '2026年10月22日', lecturer: 'Olive', location: '上海', spots: '开放报名中' },
       ],
     },
     lecturers: {
       items: [
-        { name: '李青青 Julia', role: '领导力与战略专家', desc: '前麦肯锡合伙人，20年企业管理咨询经验，服务超过100家世界500强企业。', tags: ['领导力', '战略', '变革'] },
-        { name: '肖烨 Olive', role: '数字化转型专家', desc: '清华大学MBA，前阿里巴巴数字化战略总监，数字化赋能领域权威讲师。', tags: ['数字化', '创新', '敏捷'] },
-        { name: '张凯 Sandy', role: '销售与营销专家', desc: '资深销售训练师，15年大客户销售实战经验，帮助千余销售团队突破业绩瓶颈。', tags: ['销售', '谈判', '客户'] },
-        { name: '赵钢 Jason', role: '组织文化专家', desc: '人力资源管理博士，专注企业文化建设与组织变革，助力多家企业打造雇主品牌。', tags: ['文化', '组织', 'HR'] },
+        { name: '李青青 Julia', role: '合得国际创始人', desc: '学习游戏内容架构设计师，讲师和高管教练', tags: ['CM', 'TS'] },
+        { name: '肖烨 Olive', role: '合得国际合伙人', desc: '合得MS/CM/TS高级讲师，TypeCoach认证老师', tags: ['CM', 'MS', 'TS'] },
+        { name: '张凯 Sandy', role: '国际注册管理咨询师（CMC）', desc: '全国中小企业管理咨询服务专家', tags: ['CM', 'MS'] },
+        { name: '赵钢 Jason', role: '资深管理专家', desc: '合得MS高级讲师，CM/TS模拟认证讲师，资深企业家和高管教练', tags: ['CM', 'MS', 'TS'] },
       ],
     },
   },

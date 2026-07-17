@@ -8,6 +8,22 @@ import Button from '../ui/Button.jsx'
 import Reveal from '../shared/Reveal.jsx'
 import styles from './OpenCourses.module.css'
 
+const MIN_TITLE_SIZE = 16
+const MAX_TITLE_SIZE = 26
+const MIN_WEIGHT = 50
+const MAX_WEIGHT = 105
+
+function getTitleFontSize(text) {
+  let weight = 0
+  for (const ch of text) {
+    weight += ch.codePointAt(0) > 0x2e80 ? 2 : 1
+  }
+  if (weight <= MIN_WEIGHT) return MAX_TITLE_SIZE
+  if (weight >= MAX_WEIGHT) return MIN_TITLE_SIZE
+  const ratio = (weight - MIN_WEIGHT) / (MAX_WEIGHT - MIN_WEIGHT)
+  return MAX_TITLE_SIZE - ratio * (MAX_TITLE_SIZE - MIN_TITLE_SIZE)
+}
+
 function OpenCourses() {
   const navigate = useNavigate()
   const { locale, t } = useI18n()
@@ -29,7 +45,7 @@ function OpenCourses() {
               headerClassName={styles.sectionHeader}
             />
             <p className={styles.note}>{s.note}</p>
-            <Button to="/contact" variant="blackOutline">{s.viewAll}</Button>
+            <Button to="/courses" variant="blackOutline">{s.viewAll}</Button>
           </div>
 
           <Reveal className={styles.swapWrap}>
@@ -69,7 +85,12 @@ function OpenCourses() {
                         {course.spots}
                       </span>
                     </div>
-                    <h3 className={styles.cardTitle}>{course.title}</h3>
+                    <h3
+                      className={styles.cardTitle}
+                      style={{ fontSize: `${getTitleFontSize(course.title)}px` }}
+                    >
+                      {course.title}
+                    </h3>
                     <div className={styles.cardMeta}>
                       <div className={styles.metaRow}>
                         <span className={styles.metaLabel}>{s.lecturer}</span>

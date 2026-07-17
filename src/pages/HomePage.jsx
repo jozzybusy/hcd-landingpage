@@ -14,13 +14,13 @@ function HomePage() {
   return (
     <>
       <Hero />
-      <OpenCourses />
       <WhoWeAre />
       <Products />
       <Teaching />
-      <Process />
       <Lecturers />
+      <OpenCourses />
       <Cases />
+      <Process />
       <Partners />
       <OtherProducts />
       <CTA />

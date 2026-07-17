@@ -78,7 +78,7 @@ function ProductDetailPage() {
             <p className={styles.heroDesc}>{product.fullDesc}</p>
             <div className={styles.heroActions}>
               <Button to="/contact" variant="primary">{common.consultNow}</Button>
-              <Button to="/contact" variant="secondary">{common.downloadPlan}</Button>
+              <Button href="https://www.glp.hcdlearning.com/" variant="secondary">{common.playGame}</Button>
             </div>
           </Reveal>
           <Reveal className={styles.heroMetrics} delay={0.2}>
@@ -119,7 +119,11 @@ function ProductDetailPage() {
         <div className="container">
           <Reveal className={styles.sectionHeader}>
             <p className={styles.label}>{p.modulesLabel}</p>
-            <h2 className={`section-title ${styles.titleLight}`}>{p.modulesTitle}</h2>
+            <h2 className={`section-title ${styles.titleLight}`}>
+              {(product.slug === 'leadership' || product.slug === 'custom') && p.modulesTitleAlt
+                ? p.modulesTitleAlt
+                : p.modulesTitle}
+            </h2>
             <p className="section-desc" style={{ color: 'rgba(255,255,255,0.6)' }}>
               {product.duration}{p.modulesMeta}{product.audience}
             </p>

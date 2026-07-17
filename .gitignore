@@ -8,6 +8,7 @@ yarn-error.log*
 node_modules
 dist
 dist-ssr
+exports
 *.local
 
 # Editor directories and files

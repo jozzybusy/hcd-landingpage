@@ -1,8 +1,11 @@
 import { useState } from 'react'
+import { useI18n } from '../../i18n/useI18n.js'
 import Reveal from '../../components/shared/Reveal.jsx'
 import styles from './ContactPage.module.css'
 
 function ContactPage() {
+  const { t } = useI18n()
+  const p = t.pages.contact
   const [form, setForm] = useState({
     name: '',
     company: '',
@@ -31,12 +34,10 @@ function ContactPage() {
         <div className={styles.heroShape2}></div>
         <div className="container">
           <Reveal className={styles.heroContent}>
-            <p className={styles.heroLabel}>联系我们</p>
-            <h1 className={styles.heroTitle}>
-              让我们<span className={styles.accent}>开始合作</span>
-            </h1>
+            <p className={styles.heroLabel}>{p.heroLabel}</p>
+            <h1 className={styles.heroTitle}>{p.heroTitle}</h1>
             <p className={styles.heroDesc}>
-              填写下方表单，我们的顾问将在24小时内与您联系，为您量身定制游戏化模拟课程方案。
+              {p.heroDesc}
             </p>
           </Reveal>
         </div>
@@ -50,102 +51,101 @@ function ContactPage() {
             <Reveal className={styles.formWrap}>
               {submitted ? (
                 <div className={styles.success}>
-                  <div className={styles.successIcon}>✓</div>
-                  <h3>提交成功！</h3>
-                  <p>感谢您的咨询，我们的顾问将在24小时内与您联系。</p>
+                  <div className={styles.successIcon}>{p.successIcon}</div>
+                  <h3>{p.successTitle}</h3>
+                  <p>{p.successDesc}</p>
                 </div>
               ) : (
                 <form className={styles.form} onSubmit={handleSubmit}>
-                  <h2 className={styles.formTitle}>预约咨询</h2>
+                  <h2 className={styles.formTitle}>{p.formTitle}</h2>
                   <div className={styles.formRow}>
                     <div className={styles.field}>
-                      <label>姓名 *</label>
+                      <label>{p.fields.name}</label>
                       <input
                         type="text"
                         name="name"
                         required
                         value={form.name}
                         onChange={handleChange}
-                        placeholder="请输入您的姓名"
+                        placeholder={p.placeholders.name}
                       />
                     </div>
                     <div className={styles.field}>
-                      <label>公司 *</label>
+                      <label>{p.fields.company}</label>
                       <input
                         type="text"
                         name="company"
                         required
                         value={form.company}
                         onChange={handleChange}
-                        placeholder="请输入公司名称"
+                        placeholder={p.placeholders.company}
                       />
                     </div>
                   </div>
                   <div className={styles.formRow}>
                     <div className={styles.field}>
-                      <label>手机 *</label>
+                      <label>{p.fields.phone}</label>
                       <input
                         type="tel"
                         name="phone"
                         required
                         value={form.phone}
                         onChange={handleChange}
-                        placeholder="请输入手机号"
+                        placeholder={p.placeholders.phone}
                       />
                     </div>
                     <div className={styles.field}>
-                      <label>邮箱</label>
+                      <label>{p.fields.email}</label>
                       <input
                         type="email"
                         name="email"
                         value={form.email}
                         onChange={handleChange}
-                        placeholder="请输入邮箱"
+                        placeholder={p.placeholders.email}
                       />
                     </div>
                   </div>
                   <div className={styles.formRow}>
                     <div className={styles.field}>
-                      <label>企业规模</label>
+                      <label>{p.fields.employees}</label>
                       <select
                         name="employees"
                         value={form.employees}
                         onChange={handleChange}
                       >
-                        <option value="">请选择</option>
-                        <option value="50人以下">50人以下</option>
-                        <option value="50-200人">50-200人</option>
-                        <option value="200-1000人">200-1000人</option>
-                        <option value="1000人以上">1000人以上</option>
+                        <option value="">{p.options.select}</option>
+                        {p.options.size.map((s) => (
+                          <option key={s} value={s}>{s}</option>
+                        ))}
                       </select>
                     </div>
                     <div className={styles.field}>
-                      <label>游戏化模拟课程需求</label>
+                      <label>{p.fields.demand}</label>
                       <select
                         name="demand"
                         value={form.demand}
                         onChange={handleChange}
                       >
-                        <option value="">请选择</option>
-                        <option value="领导力">领导力发展</option>
-                        <option value="定制游戏化模拟课程">企业定制游戏化模拟课程</option>
-                        <option value="技能加速">技能加速营</option>
-                        <option value="其他">其他</option>
+                        <option value="">{p.options.select}</option>
+                        <option value={p.options.demand.leadership}>{p.options.demand.leadership}</option>
+                        <option value={p.options.demand.custom}>{p.options.demand.custom}</option>
+                        <option value={p.options.demand.accelerator}>{p.options.demand.accelerator}</option>
+                        <option value={p.options.demand.other}>{p.options.demand.other}</option>
                       </select>
                     </div>
                   </div>
                   <div className={styles.field}>
-                    <label>需求描述</label>
+                    <label>{p.fields.message}</label>
                     <textarea
                       name="message"
                       rows="4"
                       value={form.message}
                       onChange={handleChange}
-                      placeholder="请简要描述您的游戏化模拟课程需求..."
+                      placeholder={p.placeholders.message}
                     ></textarea>
                   </div>
                   <button type="submit" className={styles.submitBtn}>
-                    提交咨询 →
+                    {p.submit}
                   </button>
                 </form>
               )}
@@ -153,33 +153,33 @@ function ContactPage() {
 
             {/* 联系信息 */}
             <Reveal className={styles.info} delay={0.1}>
-              <h2 className={styles.infoTitle}>其他联系方式</h2>
+              <h2 className={styles.infoTitle}>{p.infoTitle}</h2>
               <div className={styles.infoItems}>
                 <div className={styles.infoItem}>
-                  <div className={styles.infoIcon}>📞</div>
+                  <div className={styles.infoIcon}>{p.contactItems.phone.icon}</div>
                   <div>
-                    <div className={styles.infoLabel}>咨询热线</div>
-                    <div className={styles.infoValue}>400-888-9999</div>
+                    <div className={styles.infoLabel}>{p.contactItems.phone.label}</div>
+                    <div className={styles.infoValue}>{p.contactItems.phone.value}</div>
                   </div>
                 </div>
                 <div className={styles.infoItem}>
-                  <div className={styles.infoIcon}>✉️</div>
+                  <div className={styles.infoIcon}>{p.contactItems.email.icon}</div>
                   <div>
-                    <div className={styles.infoLabel}>商务邮箱</div>
-                    <div className={styles.infoValue}>hcd@hcdlearning.com</div>
+                    <div className={styles.infoLabel}>{p.contactItems.email.label}</div>
+                    <div className={styles.infoValue}>{p.contactItems.email.value}</div>
                   </div>
                 </div>
                 <div className={styles.infoItem}>
-                  <div className={styles.infoIcon}>📍</div>
+                  <div className={styles.infoIcon}>{p.contactItems.address.icon}</div>
                   <div>
-                    <div className={styles.infoLabel}>办公地址</div>
-                    <div className={styles.infoValue}>北京 · 上海 · 深圳</div>
+                    <div className={styles.infoLabel}>{p.contactItems.address.label}</div>
+                    <div className={styles.infoValue}>{p.contactItems.address.value}</div>
                   </div>
                 </div>
               </div>
               <div className={styles.infoNote}>
-                <p>工作时间：周一至周五 9:00 - 18:00</p>
-                <p>我们将在收到您的咨询后24小时内回复。</p>
+                <p>{p.workHours}</p>
+                <p>{p.replyNote}</p>
               </div>
             </Reveal>
           </div>

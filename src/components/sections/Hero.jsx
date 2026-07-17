@@ -81,7 +81,7 @@ function Hero() {
         <p className={styles.desc}>{hero.desc}</p>
         <div className={styles.actions}>
           <Button to="/#open-courses" variant="primary">{hero.openCourses}</Button>
-          <Button to="/cases" variant="secondary">{common.viewCases}</Button>
+          <Button href="https://prd-store.oss-cn-zhangjiakou.aliyuncs.com/prd/web/hcd-video.mp4" variant="secondary">{common.watchVideo}</Button>
         </div>
         <div className={styles.stats}>
           <div>

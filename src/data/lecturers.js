@@ -14,6 +14,7 @@ const lecturerStructure = [
   {
     id: 3,
     avatar: 'linear-gradient(135deg,#FF5FA0,#CC0055)',
+    photo: '/lecturers/sandy.png',
   },
   {
     id: 4,

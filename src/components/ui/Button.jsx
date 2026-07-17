@@ -21,8 +21,14 @@ function Button({
   }
 
   if (href) {
+    const isExternal = /^https?:\/\//.test(href)
     return (
-      <a href={href} className={classes} onClick={onClick}>
+      <a
+        href={href}
+        className={classes}
+        onClick={onClick}
+        {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+      >
         {children}
       </a>
     )

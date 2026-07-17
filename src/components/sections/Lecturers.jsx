@@ -51,9 +51,9 @@ function Lecturers() {
               className={styles.card}
               imageSrc={gradientToSvgUrl(lecturer.avatar)}
               altText={lecturer.name}
-              containerHeight="360px"
+              containerHeight="540px"
               containerWidth="100%"
-              imageHeight="360px"
+              imageHeight="540px"
               imageWidth="100%"
               rotateAmplitude={12}
               scaleOnHover={1.05}

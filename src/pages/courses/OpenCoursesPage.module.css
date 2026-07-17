@@ -1,0 +1,495 @@
+.page {
+  padding-top: 64px;
+}
+
+/* === Hero === */
+.hero {
+  background: var(--black);
+  padding: 88px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroShape1 {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  background: var(--purple);
+  border-radius: 50%;
+  top: -140px;
+  right: -110px;
+  opacity: 0.9;
+}
+
+.heroShape2 {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  background: var(--green-yellow);
+  border-radius: 50%;
+  bottom: -60px;
+  right: 320px;
+  opacity: 0.9;
+}
+
+.heroShape3 {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background: var(--pink);
+  border-radius: 50%;
+  top: 60px;
+  left: -40px;
+  opacity: 0.75;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  max-width: 680px;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 24px;
+}
+
+.breadcrumb a:hover {
+  color: var(--white);
+}
+
+.current {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.heroLabel {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--green-yellow);
+  margin-bottom: 16px;
+}
+
+.heroTitle {
+  display: block;
+  max-width: 100%;
+  font-size: clamp(40px, 6vw, 64px);
+  font-weight: 900;
+  line-height: 1.05;
+  color: var(--white);
+  margin-bottom: 24px;
+  letter-spacing: -2px;
+  white-space: nowrap;
+}
+
+.heroDesc {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.75;
+  max-width: 520px;
+  margin-bottom: 40px;
+}
+
+.heroStats {
+  display: flex;
+  gap: 48px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.statNum {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 900;
+  color: var(--green-yellow);
+  letter-spacing: -1px;
+}
+
+.statLabel {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.65);
+  margin-top: 2px;
+}
+
+/* === 筛选栏 === */
+.filterBar {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--gray-light);
+  position: sticky;
+  top: 64px;
+  z-index: 50;
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.filterRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.filterLabel {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.filterOptions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filterBtn {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+  padding: 6px 16px;
+  border-radius: 20px;
+  transition: all 0.2s;
+}
+
+.filterBtn:hover {
+  color: var(--black);
+  background: var(--gray-bg);
+}
+
+.filterBtn.active {
+  background: var(--black);
+  color: var(--white);
+}
+
+.resultInfo {
+  margin-left: auto;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* === 列表区（按月分组） === */
+.listSection {
+  background: var(--gray-bg);
+  padding: var(--section-pad) 0;
+}
+
+.monthGroup {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 32px;
+  margin-bottom: 56px;
+}
+
+.monthGroup:last-of-type {
+  margin-bottom: 0;
+}
+
+.monthCol {
+  position: relative;
+}
+
+.monthSticky {
+  position: sticky;
+  top: 140px;
+  display: flex;
+  flex-direction: column;
+}
+
+.monthNum {
+  font-family: var(--font-display);
+  font-size: 64px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -3px;
+  color: var(--black);
+}
+
+.monthName {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 6px;
+}
+
+.monthRows {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.rowWrap {
+  width: 100%;
+}
+
+/* === 课程行卡片 === */
+.row {
+  --row-accent: var(--purple);
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 28px 32px;
+  display: grid;
+  grid-template-columns: 190px 1fr auto;
+  align-items: center;
+  gap: 28px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.row::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background: var(--row-accent);
+}
+
+.row:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(13, 13, 13, 0.1);
+}
+
+.delivered {
+  opacity: 0.6;
+}
+
+.delivered:hover {
+  opacity: 1;
+}
+
+.rowDate {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  color: var(--black);
+}
+
+.rowDateIcon {
+  font-size: 16px;
+}
+
+.rowMain {
+  min-width: 0;
+}
+
+.rowTags {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.programTag {
+  background: var(--row-accent);
+  color: var(--white);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 3px 12px;
+  border-radius: 16px;
+}
+
+.regionTag {
+  background: var(--gray-bg);
+  color: var(--text-muted);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 12px;
+  border-radius: 16px;
+}
+
+.statusTag {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 12px;
+  border-radius: 16px;
+}
+
+.statusTag.confirmed {
+  background: var(--teal-light);
+  color: #00806E;
+}
+
+.statusTag.tbd {
+  background: #FFF3C4;
+  color: #9A7B00;
+}
+
+.statusTag.delivered {
+  background: var(--gray-light);
+  color: var(--text-muted);
+  opacity: 1;
+}
+
+.rowTitle {
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  color: var(--black);
+  margin-bottom: 10px;
+}
+
+.rowMeta {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.metaLabel {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.rowAction {
+  flex-shrink: 0;
+}
+
+.registerBtn {
+  white-space: nowrap;
+}
+
+/* === 空状态 === */
+.empty {
+  text-align: center;
+  padding: 80px 0;
+}
+
+.emptyIcon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.empty p {
+  font-size: 16px;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+.resetBtn {
+  background: var(--purple);
+  color: var(--white);
+  border-radius: var(--radius-xl);
+  padding: 12px 28px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.resetBtn:hover {
+  background: var(--purple-dark);
+}
+
+/* === 底部 CTA === */
+.ctaStrip {
+  background: var(--purple);
+  padding: 64px 0;
+}
+
+.ctaInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.ctaTitle {
+  font-size: clamp(24px, 3vw, 34px);
+  font-weight: 900;
+  letter-spacing: -1px;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.ctaDesc {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 560px;
+}
+
+/* === 响应式 === */
+@media (max-width: 1024px) {
+  .row {
+    grid-template-columns: 1fr auto;
+  }
+
+  .rowDate {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 900px) {
+  .monthGroup {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+
+  .monthSticky {
+    position: static;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 12px;
+  }
+
+  .monthNum {
+    font-size: 44px;
+  }
+
+  .heroStats {
+    gap: 24px;
+  }
+
+  .resultInfo {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .row {
+    grid-template-columns: 1fr;
+    padding: 24px;
+    gap: 16px;
+  }
+
+  .rowMeta {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
+
+  .rowAction {
+    width: 100%;
+  }
+
+  .registerBtn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+}
