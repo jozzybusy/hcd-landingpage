@@ -1,0 +1,196 @@
+.page {
+  padding-top: 64px;
+}
+
+/* === Hero === */
+.hero {
+  background: var(--purple);
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroShape1 {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: var(--teal);
+  border-radius: 50%;
+  top: -120px;
+  right: -100px;
+  opacity: 0.85;
+}
+
+.heroShape2 {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  background: var(--green-yellow);
+  border-radius: 50%;
+  bottom: 40px;
+  left: 60px;
+  opacity: 0.9;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  max-width: 640px;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.breadcrumb a:hover {
+  color: var(--white);
+}
+
+.current {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 16px;
+  border-radius: var(--radius-xl);
+  margin-bottom: 20px;
+  backdrop-filter: blur(8px);
+}
+
+.heroTitle {
+  font-size: clamp(40px, 6vw, 64px);
+  font-weight: 900;
+  line-height: 1.05;
+  color: var(--white);
+  margin-bottom: 24px;
+  letter-spacing: -2px;
+}
+
+.heroTitle .accent {
+  color: var(--green-yellow);
+  margin-left: 0.25em;
+}
+
+.heroDesc {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.7;
+  max-width: 520px;
+  margin-bottom: 28px;
+}
+
+.backLink {
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.backLink:hover {
+  color: var(--white);
+}
+
+/* === Gallery === */
+.gallery {
+  background: var(--gray-bg);
+  padding: var(--section-pad) 0;
+}
+
+.galleryInner {
+  position: relative;
+  width: 100%;
+  /* Enough room for the tallest masonry column (items use height/2). */
+  min-height: 1200px;
+}
+
+/* Masonry list fills the inner area so absolutely positioned tiles land
+   relative to this box. */
+.galleryInner :global(.list) {
+  width: 100%;
+  height: 100%;
+  min-height: 1200px;
+}
+
+/* === CTA === */
+.cta {
+  background: var(--green-yellow);
+  padding: var(--section-pad) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaShape1 {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: var(--orange);
+  border-radius: 50%;
+  top: -80px;
+  right: -60px;
+  opacity: 0.5;
+}
+
+.ctaShape2 {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  background: var(--purple);
+  border-radius: 50%;
+  bottom: -40px;
+  left: 200px;
+  opacity: 0.3;
+}
+
+.ctaInner {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.ctaTitle {
+  font-size: clamp(40px, 6vw, 68px);
+  letter-spacing: -2px;
+}
+
+.ctaDesc {
+  font-size: 17px;
+  color: rgba(0, 0, 0, 0.65);
+  max-width: 500px;
+  margin: 20px auto 40px;
+}
+
+.ctaActions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    padding: 60px 0;
+  }
+
+  .galleryInner {
+    min-height: 2200px;
+  }
+
+  .galleryInner :global(.list) {
+    min-height: 2200px;
+  }
+}

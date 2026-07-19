@@ -20,6 +20,18 @@
   justify-content: flex-start;
 }
 
+.cardLink {
+  display: flex;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cardLink:hover {
+  transform: translateY(-6px);
+  box-shadow: 0px 20px 60px -20px rgba(0, 0, 0, 0.35);
+}
+
 .online {
   background: var(--purple);
 }
@@ -96,6 +108,19 @@
 
 .tagDark {
   background: rgba(255, 255, 255, 0.2);
+}
+
+.viewGallery {
+  margin-top: auto;
+  padding-top: 24px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 14px;
+  font-weight: 600;
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 
 @media (max-width: 900px) {

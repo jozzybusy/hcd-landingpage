@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useI18n } from '../../i18n/useI18n.js'
 import SectionHeader from '../ui/SectionHeader.jsx'
 import Reveal from '../shared/Reveal.jsx'
@@ -20,7 +21,7 @@ function Teaching() {
           desc={s.desc}
         />
         <Reveal className={styles.grid}>
-          <div className={`${styles.card} ${styles.online}`}>
+          <Link to="/teaching" className={`${styles.card} ${styles.online} ${styles.cardLink}`}>
             <div className={styles.cardShape} style={{ width: '200px', height: '200px', background: 'rgba(255,255,255,0.08)', top: '-60px', right: '-40px' }}></div>
             <div className={styles.cardShape} style={{ width: '100px', height: '100px', background: 'var(--green-yellow)', opacity: 0.2, bottom: '60px', left: '40px', borderRadius: '50%' }}></div>
             <div className={styles.cardIcon}>
@@ -33,9 +34,10 @@ function Teaching() {
                 <span key={tag} className={styles.tag}>{tag}</span>
               ))}
             </div>
-          </div>
+            <span className={styles.viewGallery}>{s.viewGallery}</span>
+          </Link>
 
-          <div className={`${styles.card} ${styles.offline}`}>
+          <Link to="/teaching" className={`${styles.card} ${styles.offline} ${styles.cardLink}`}>
             <div className={styles.cardShape} style={{ width: '160px', height: '160px', background: 'rgba(255,255,255,0.1)', top: '-40px', right: '-30px', borderRadius: '50%' }}></div>
             <div className={styles.cardShape} style={{ width: '80px', height: '80px', background: 'rgba(0,0,0,0.1)', bottom: '40px', left: '20px', borderRadius: '50%' }}></div>
             <div className={styles.cardIcon}>
@@ -48,9 +50,10 @@ function Teaching() {
                 <span key={tag} className={`${styles.tag} ${styles.tagDark}`}>{tag}</span>
               ))}
             </div>
-          </div>
+            <span className={styles.viewGallery}>{s.viewGallery}</span>
+          </Link>
 
-          <div className={`${styles.card} ${styles.blended}`}>
+          <Link to="/teaching" className={`${styles.card} ${styles.blended} ${styles.cardLink}`}>
             <div className={styles.cardShape} style={{ width: '180px', height: '180px', background: 'rgba(255,255,255,0.1)', top: '-50px', right: '-30px', borderRadius: '50%' }}></div>
             <div className={styles.cardShape} style={{ width: '100px', height: '100px', background: 'rgba(0,0,0,0.12)', bottom: '50px', left: '30px', borderRadius: '50%' }}></div>
             <div className={styles.cardIcon}>
@@ -63,7 +66,8 @@ function Teaching() {
                 <span key={tag} className={styles.tag}>{tag}</span>
               ))}
             </div>
-          </div>
+            <span className={styles.viewGallery}>{s.viewGallery}</span>
+          </Link>
         </Reveal>
       </div>
     </section>

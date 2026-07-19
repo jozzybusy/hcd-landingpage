@@ -37,6 +37,12 @@ const zh = {
     ),
     desc: '为企业提供定制的游戏化模拟课程服务，覆盖线上线下全场景，助力组织能力跃升与持续发展。',
     openCourses: '公开课',
+    wheel: {
+      items: ['商业素质', '领导力', '组织合力', '合得国际'],
+      businessTagline: '战略思维 · 策略目标的制定与达成 · 市场洞察 · 数据分析决策',
+      leadershipTagline: '对变化和创新的包容性与灵活性',
+      synergyTagline: <>加速团队敏捷 —— 员工个体潜能挖掘<br />+ 团队合力</>,
+    },
     trusted: '他们信任我们',
     trustedLogos: ['华为', '腾讯', '阿里巴巴', '字节跳动', '美团'],
     stats: {
@@ -100,6 +106,7 @@ const zh = {
         </>
       ),
       desc: '灵活适配企业游戏化模拟课程需求，随时随地开启高效学习旅程。',
+      viewGallery: '查看照片墙 →',
       online: {
         title: '线上模拟课程',
         desc: '打破时空限制，通过多人实时3D游戏、SaaS软件、视频会议等多种方式，随时随地高效学习。支持实时互动与学习数据追踪。',
@@ -258,6 +265,14 @@ const zh = {
       relatedRead: '查看案例 →',
       ctaTitle: <>想要类似的<span style={{ color: 'var(--purple)' }}>成果</span>？</>,
       ctaDesc: '联系我们，定制专属游戏化模拟课程方案，开启您的组织能力提升之旅。',
+    },
+    teachingGallery: {
+      breadcrumbHome: '首页',
+      breadcrumbTeaching: '教学形式',
+      heroLabel: '照片墙',
+      heroTitle: <>教学形式<span className="accent">精彩瞬间</span></>,
+      heroDesc: '走近真实的合得课堂场景，涵盖线上、线下与混合式教学——点击任意照片可查看大图。',
+      backToTeaching: '← 返回教学形式',
     },
     productDetail: {
       breadcrumbHome: '首页',

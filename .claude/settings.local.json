@@ -74,10 +74,26 @@
       "Bash(awk 'NR>=48 && NR<=68' /Users/zhangbiao/hcd_landingpage/src/data/openCourses.js)",
       "Bash(mkdir -p /tmp/hcd_scratch)",
       "Bash(nohup npm run dev -- --port 5183)",
-      "Bash(NODE_PATH=/Users/zhangbiao/hcd_landingpage/node_modules node -e ' *)"
+      "Bash(NODE_PATH=/Users/zhangbiao/hcd_landingpage/node_modules node -e ' *)",
+      "Bash(find /c/Users/joezb/AppData/Local/Temp -iname \"*.png\" -newer \"E:\\\\AI_Projects\\\\hcd_landingpage\\\\package.json\" 2>/dev/null | head -20)",
+      "Read(//c/Users/joezb/AppData/Local/Temp/**)",
+      "Read(//c/Users/joezb/AppData/Local/Temp/claude/**)",
+      "Bash(xargs -I{} sh -c 'echo {}; stat -c \"%y %s\" {} 2>/dev/null || stat -f \"%Sm %z\" {}')",
+      "Bash(find /c/Users/joezb/AppData/Local/Temp -iname \"*.png\" -mmin -60 2>/dev/null | head -20; echo \"---\"; find /c/Users/joezb -iname \"*hotelstar*\" -o -iname \"*HotelStar*\" 2>/dev/null | grep -v -i \"AppData/Local/Microsoft\" | head -20)",
+      "Read(//c/Users/joezb/**)",
+      "Bash(find /c/Users/joezb/AppData -iname \"*.png\" -mmin -30 2>/dev/null | grep -vi \"notifyicon\"; find / -maxdepth 6 -iname \"*pasted*\" 2>/dev/null | head)",
+      "Read(//c/Users/joezb/AppData/**)",
+      "Read(//e//**)",
+      "Bash(python3 -c ' *)",
+      "Bash(node -e ' *)",
+      "Bash(curl -s http://localhost:5173/ -o /dev/null -w \"%{http_code}\\\\n\")",
+      "Bash(cp \"e:/AI_Projects/hcd_landingpage/synergy-check.png\" \"/tmp/synergy-check.png\")",
+      "Bash(cd \"E:\\\\AI_Projects\\\\hcd_landingpage\" && rm -f leadership-check.png synergy-check.png synergy-check2.png /tmp/synergy-check.png)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5173/)"
     ],
     "additionalDirectories": [
-      "/private/tmp/claude-501/-Users-wwzz-Downloads-proxyclawd/88833871-9d1c-410a-8425-a5a54e5377ef/scratchpad"
+      "/private/tmp/claude-501/-Users-wwzz-Downloads-proxyclawd/88833871-9d1c-410a-8425-a5a54e5377ef/scratchpad",
+      "\\tmp"
     ]
   }
 }

@@ -61,18 +61,20 @@ function ProductDetailPage() {
             <div className={styles.heroTitleRow}>
               <h1 className={styles.heroTitle}>{product.name}</h1>
               {(product.slug === 'custom' || product.slug === 'leadership' || product.slug === 'skill-accelerator') && (
-                <img
-                  className={styles.heroTitleLogo}
-                  src={
-                    product.slug === 'custom'
-                      ? '/hcd-logo-11.png'
-                      : product.slug === 'leadership'
-                      ? '/hcd-logo-09.png'
-                      : '/hcd-logo-15.png'
-                  }
-                  alt="HCD"
-                  loading="eager"
-                />
+                <div className={styles.heroTitleLogoBadge}>
+                  <img
+                    className={styles.heroTitleLogo}
+                    src={
+                      product.slug === 'custom'
+                        ? '/hcd-logo-11.png'
+                        : product.slug === 'leadership'
+                        ? '/hcd-logo-09.png'
+                        : '/hcd-logo-15.png'
+                    }
+                    alt="HCD"
+                    loading="eager"
+                  />
+                </div>
               )}
             </div>
             <p className={styles.heroDesc}>{product.fullDesc}</p>

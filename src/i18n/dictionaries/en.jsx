@@ -39,6 +39,12 @@ const en = {
     ),
     desc: 'We provide customized gamified simulation learning services for enterprises, covering both online and offline scenarios to boost organizational capabilities and sustainable growth.',
     openCourses: 'Open Courses',
+    wheel: {
+      items: ['Business Acumen', 'Leadership', 'Organizational Synergy', 'HCDLearning Global'],
+      businessTagline: 'Strategic Thinking · Setting & Achieving Goals · Market Insight · Data-Driven Decisions',
+      leadershipTagline: 'Openness and Agility Toward Change and Innovation',
+      synergyTagline: <>Accelerating Team Agility — Unlocking Individual Potential<br />+ Team Synergy</>,
+    },
     trusted: 'Trusted by',
     trustedLogos: ['Huawei', 'Tencent', 'Alibaba', 'ByteDance', 'Meituan'],
     stats: {
@@ -102,6 +108,7 @@ const en = {
         </>
       ),
       desc: 'Flexible formats adapted to enterprise learning needs, enabling effective learning anytime, anywhere.',
+      viewGallery: 'View gallery →',
       online: {
         title: 'Online Simulation Learning',
         desc: 'Break time and location constraints through multiplayer real-time 3D games, SaaS software, and video conferencing, enabling effective learning anytime, anywhere. Supports real-time interaction and learning data tracking.',
@@ -260,6 +267,14 @@ const en = {
       relatedRead: 'View case →',
       ctaTitle: <>Want Similar <span style={{ color: 'var(--purple)' }}>Results</span>?</>,
       ctaDesc: 'Contact us to customize a gamified simulation learning program and start your organizational capability journey.',
+    },
+    teachingGallery: {
+      breadcrumbHome: 'Home',
+      breadcrumbTeaching: 'Delivery Formats',
+      heroLabel: 'Photo Gallery',
+      heroTitle: <>Delivery Formats <span className="accent">in Action</span></>,
+      heroDesc: 'A glimpse of real HCDLearning sessions across online, offline, and blended formats — click any photo to view it full size.',
+      backToTeaching: '← Back to delivery formats',
     },
     productDetail: {
       breadcrumbHome: 'Home',
