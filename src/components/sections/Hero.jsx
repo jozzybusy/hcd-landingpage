@@ -10,7 +10,7 @@ import styles from './Hero.module.css'
 
 function Hero() {
   const [isRingsHovered, setIsRingsHovered] = useState(false)
-  const { t } = useI18n()
+  const { t, locale } = useI18n()
   const { hero, common } = t
 
   const brandIndex = hero.wheel.items.length - 1
@@ -89,7 +89,7 @@ function Hero() {
           textColor="rgba(255,255,255,0.35)"
           activeColor="var(--white)"
           side="left"
-          fontSize={3}
+          fontSize={locale === 'en' ? 2 : 3}
           spacing={2.5}
           curve={2.0}
           tilt={6}

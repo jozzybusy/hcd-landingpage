@@ -127,6 +127,7 @@ const zh = {
       label: '明星讲师',
       title: <>顶尖专家<span className="accent">亲身传授</span></>,
       desc: '汇聚百位来自500强企业的实战派专家讲师，为您带来最具价值的游戏化模拟课程体验。',
+      moreBtn: '更多讲师 →',
     },
     openCourses: {
       label: '公开课计划',
@@ -362,6 +363,25 @@ const zh = {
       title: '页面走丢了',
       desc: '您访问的页面不存在，可能已被移动或删除。',
       backHome: '返回首页',
+    },
+    lecturersList: {
+      breadcrumbHome: '首页',
+      breadcrumbLecturers: '讲师团队',
+      heroLabel: '明星讲师',
+      heroTitle: (
+        <>
+          百位<span className="accent">行业专家</span>
+        </>
+      ),
+      heroDesc: '汇聚百位来自500强企业的实战派专家讲师，覆盖商战模拟、组织变革、团队协同、领导力发展等核心领域。',
+      stats: {
+        lecturers: '讲师数量',
+        courses: '课程系列',
+        satisfaction: '客户满意度',
+        lecturersNum: '100+',
+        coursesNum: '8',
+        satisfactionNum: '98%',
+      },
     },
   },
   footer: {

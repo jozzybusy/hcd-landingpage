@@ -129,6 +129,7 @@ const en = {
       label: 'Star Faculty',
       title: <>Learn Directly from <span className="accent">Top Experts</span></>,
       desc: 'We bring together 100+ battle-tested experts from Fortune 500 companies to deliver the most valuable gamified learning experiences.',
+      moreBtn: 'More lecturers →',
     },
     openCourses: {
       label: 'Open Courses',
@@ -365,6 +366,25 @@ const en = {
       desc: 'The page you visited does not exist or may have been moved.',
       backHome: 'Back to Home',
     },
+    lecturersList: {
+      breadcrumbHome: 'Home',
+      breadcrumbLecturers: 'Faculty',
+      heroLabel: 'Star Faculty',
+      heroTitle: (
+        <>
+          100+ <span className="accent">Industry Experts</span>
+        </>
+      ),
+      heroDesc: 'A star faculty of 100+ battle-tested experts from Fortune 500 companies, covering business war games, organizational change, team synergy and leadership development.',
+      stats: {
+        lecturers: 'Faculty members',
+        courses: 'Course series',
+        satisfaction: 'Client satisfaction',
+        lecturersNum: '100+',
+        coursesNum: '8',
+        satisfactionNum: '98%',
+      },
+    },
   },
   footer: {
     tagline: 'Dedicated to enterprise talent development and organizational capability building, providing continuous momentum for the high-quality growth of Chinese enterprises.',
@@ -421,10 +441,10 @@ const en = {
         },
       },
       custom: {
-        name: 'Business War Game',
+        name: 'Business Simulation',
         tag: 'Business Simulation',
         shortDesc: 'Comprehensive analysis and dynamic decision-making in simulated competitive markets',
-        fullDesc: 'The world\'s first business war game built on emerging-market data, led by the former dean of CEIBS. Participants make strategy decisions based on real data in a highly realistic market environment, pursuing market share and profit maximization amid dynamic competition. The platform supports both online and offline versions for audiences from high potentials to senior leaders, effectively sharpening strategic thinking, data analysis, and system decision-making. Adopted by over 1,800 leading enterprises and business schools worldwide, with a 98% completion rate.',
+        fullDesc: 'The world\'s first business simulation game built on emerging-market data, led by the former dean of CEIBS. Participants make strategy decisions based on real data in a highly realistic market environment, pursuing market share and profit maximization amid dynamic competition. The platform supports both online and offline versions for audiences from high potentials to senior leaders, effectively sharpening strategic thinking, data analysis, and system decision-making. Adopted by over 1,800 leading enterprises and business schools worldwide, with a 98% completion rate.',
         duration: 'Customized on demand (typically 2-3 days)',
         audience: 'CXOs / specific teams',
         metrics: {

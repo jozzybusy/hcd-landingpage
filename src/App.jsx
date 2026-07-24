@@ -7,6 +7,7 @@ import ProductDetailPage from './pages/product/ProductDetailPage.jsx'
 import OpenCoursesPage from './pages/courses/OpenCoursesPage.jsx'
 import CasesListPage from './pages/cases/CasesListPage.jsx'
 import CaseDetailPage from './pages/cases/CaseDetailPage.jsx'
+import LecturersListPage from './pages/lecturers/LecturersListPage.jsx'
 import TeachingGalleryPage from './pages/teaching/TeachingGalleryPage.jsx'
 import ContactPage from './pages/contact/ContactPage.jsx'
 import NotFound from './pages/NotFound.jsx'
@@ -23,6 +24,7 @@ function App() {
           <Route path="/courses" element={<OpenCoursesPage />} />
           <Route path="/cases" element={<CasesListPage />} />
           <Route path="/cases/:slug" element={<CaseDetailPage />} />
+          <Route path="/lecturers" element={<LecturersListPage />} />
           <Route path="/teaching" element={<TeachingGalleryPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="*" element={<NotFound />} />

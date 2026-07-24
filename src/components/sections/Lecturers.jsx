@@ -2,6 +2,7 @@ import { useMemo } from 'react'
 import { useI18n } from '../../i18n/useI18n.js'
 import { getLecturers } from '../../data/lecturers.js'
 import SectionHeader from '../ui/SectionHeader.jsx'
+import Button from '../ui/Button.jsx'
 import Reveal from '../shared/Reveal.jsx'
 import TiltedCard from '../ui/TiltedCard.jsx'
 import styles from './Lecturers.module.css'
@@ -84,6 +85,9 @@ function Lecturers() {
             />
           ))}
         </Reveal>
+        <div className={styles.moreBtnWrap}>
+          <Button to="/lecturers" variant="blackOutline">{s.moreBtn}</Button>
+        </div>
       </div>
     </section>
   )
